@@ -29,18 +29,41 @@
                         <td class="p-3">{{ \Carbon\Carbon::parse($project->start_date)->format('d M Y') }}</td>
                         <td class="p-3">{{ \Carbon\Carbon::parse($project->end_date)->format('d M Y') }}</td>
                         <td class="py-5 px-6">
-                            <div class="flex items-center gap-3 w-24">
+                            <div class="flex items-center gap-3 w-32">
                                 <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                                    <div class="h-full {{ $project->progress == 100 ? 'bg-green-500' : 'bg-blue-500' }} rounded-full"
+                                    <div class="h-full {{ $project->progress == 100 ? 'bg-green-600' : 'bg-blue-500' }} rounded-full"
                                         style="width: {{ $project->progress }}%"></div>
                                 </div>
-                                <span class="text-sm font-bold text-gray-700 w-10">{{ $project->progress }}%</span>
+                                <span class="text-xs font-bold w-10">{{ $project->progress }}%</span>
                             </div>
                         </td>
-                        <td class="p-3">{{ $project->progress }}</td>
+                        <td class="text-center p-3">
+                            <div class="flex justify-center items-center gap-2">
+                                <button wire:click="confirmDelete({{ $project->id }})"
+                                    class="p-1.5 bg-red-600 text-white rounded hover:bg-red-700 transition-colors shadow-sm">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <button
+                                    class="p-1.5 bg-green-600 text-white rounded hover:bg-green-700 transition-colors shadow-sm">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+    @if ($showDeleteModal)
+        <div class="fixed inset-0 flex items-center justify-center bg-black/50">
+            <div class="bg-white p-6 rounded-lg">
+                <h2 class="font-bold mb-6">Apakah Anda yakin ingin menghapus project ini?</h2>
+                <div class="mt-4 flex gap-2">
+                    <button wire:click="delete" class="bg-red-500 text-white px-4 py-2 rounded">Ya, Hapus</button>
+                    <button wire:click="$set('showDeleteModal', false)"
+                        class="bg-gray-300 px-4 py-2 rounded">Batal</button>
+                </div>
+            </div>
+        </div>
+    @endif
 </div>

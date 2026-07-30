@@ -21,22 +21,13 @@ class DatabaseSeeder extends Seeder
         // Client::factory(5)->create();
 
         Project::create([
-            'title' => 'SI Pendataan Atlet Daerah',
-            'client_id' => 3,
-            'user_id' => 3,
-            'start_date' => '2026-02-02',
-            'end_date' => '2026-05-30',
-            'progress' => 40,
+            'title' => 'Sistem Management Stok Barang',
+            'client_id' => 5,
+            'user_id' => 5,
+            'start_date' => '2026-01-20',
+            'end_date' => '2026-06-10',
+            'progress' => 75,
             'status' => 'in_progress',
-        ]);
-        Project::create([
-            'title' => 'SI Pendataan Atlet Daerah',
-            'client_id' => 4,
-            'user_id' => 4,
-            'start_date' => '2026-09-02',
-            'end_date' => '2027-01-15',
-            'progress' => 100,
-            'status' => 'completed',
         ]);
     }
 }
