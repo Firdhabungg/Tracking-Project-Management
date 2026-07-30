@@ -49,7 +49,7 @@
                                     class="p-1.5 bg-red-600 text-white rounded hover:bg-red-700 transition-colors shadow-sm">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
-                                <button
+                                <button wire:click="editProject({{ $project->id }})"
                                     class="p-1.5 bg-green-600 text-white rounded hover:bg-green-700 transition-colors shadow-sm">
                                     <i class="fa-solid fa-pencil"></i>
                                 </button>
@@ -65,6 +65,7 @@
         <span class="text-gray-500">Created by:</span>
         <span class="font-bold text-blue-500">Dicky Firdha Firmansyah</span>
     </div>
+
     @include('livewire.modals.delete-project')
-    {{-- @include('livewire.modals.edit-project') --}}
+    @include('livewire.modals.edit-project')
 </div>
