@@ -1,9 +1,14 @@
 <div class="max-w-7xl mx-auto bg-white overflow-hidden mt-4">
     <h1 class="text-center my-2 text-2xl font-bold">Project Monitoring</h1>
-    <div>
+    <div class="flex justify-between items-center">
         <a href="{{ '/project/create' }}" wire:navigate
             class="p-2 rounded font-bold bg-amber-500 hover:bg-amber-600 transition-colors"><i
                 class="fa-solid fa-plus"></i> Tambah Project</a>
+        <div class="flex justify-center items-center">
+            <i class="fa-solid fa-magnifying-glass text-xl mr-2"></i>
+            <input wire:model.live="search" type="text" id="search"
+                class="w-full p-2 border-2 border-blue-700 shadow-sm bg-gray-200 rounded-xl" placeholder="search...">
+        </div>
     </div>
 
     <div class="overflow-x-auto bg-gray-50 rounded-sm shadow-md mt-3">
@@ -20,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($projects as $project)
+                @forelse ($projects as $project)
                     <tr class="text-gray-500 text-sm">
                         <td class="p-3">{{ $project->title }}</td>
                         <td class="p-3">{{ $project->client->company_name }}</td>
@@ -56,9 +61,18 @@
                             </div>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="7" class="px-6 py-12 font-bold text-center text-gray-500">
+                            The project is empty
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
+        <div class="px-3 py-4">
+            {{ $projects->links() }}
+        </div>
     </div>
 
     <div class="max-w-7xl mx-auto mt-6 flex flex-col items-end text-sm pr-2">

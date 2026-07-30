@@ -8,10 +8,13 @@ use App\Models\User;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class Dashboard extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, WithPagination;
+
+    public $search = '';
 
     public $title = '';
     public $user_id = '';
@@ -25,6 +28,11 @@ class Dashboard extends Component
     public ?int $projectId = null;
     public bool $showDeleteModal = false;
     public bool $showEditProjectModal = false;
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function confirmDelete(int $id): void
     {
@@ -103,10 +111,15 @@ class Dashboard extends Component
 
     public function render()
     {
+        $projects = Project::with(['client', 'user'])
+            ->where('title', 'like', '%' . $this->search . '%')
+            ->orWhereHas('client', function ($query) {
+                $query->where('company_name', 'like', '%' . $this->search . '%');
+            })->paginate(3);
         return view('livewire.dashboard', [
-            'projects' => Project::with(['client', 'user'])->get(),
-            'clients' => Client::all(),
-            'users' => User::all()
+            'projects'  => $projects,
+            'clients'   => Client::all(),
+            'users'      => User::all()
         ]);
     }
 }

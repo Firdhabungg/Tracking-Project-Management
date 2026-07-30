@@ -1,4 +1,4 @@
-<div class="max-w-5xl mx-auto py-8 px-4">
+<div class="max-w-4xl mx-auto py-8 px-4">
     <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
         <h2 class="text-2xl font-bold mb-4">Create New Project</h2>
 
