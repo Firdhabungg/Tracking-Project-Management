@@ -6,7 +6,7 @@
                 class="fa-solid fa-plus"></i> Tambah Project</a>
         <div class="flex justify-center items-center">
             <i class="fa-solid fa-magnifying-glass text-xl mr-2"></i>
-            <input wire:model.live="search" type="text" id="search"
+            <input wire:model.live.debounce.250ms="search" type="text" id="search"
                 class="w-full p-2 border-2 border-blue-700 shadow-sm bg-gray-200 rounded-xl" placeholder="search...">
         </div>
     </div>
