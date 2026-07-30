@@ -1,6 +1,12 @@
 <div class="max-w-7xl mx-auto bg-white overflow-hidden mt-4">
     <h1 class="text-center my-2 text-2xl font-bold">Project Monitoring</h1>
-    <div class="overflow-x-auto bg-gray-50 rounded-sm shadow-2xl">
+    <div>
+        <a href="{{ '/project/create' }}" wire:navigate
+            class="p-2 rounded font-bold bg-amber-500 hover:bg-amber-600 transition-colors"><i
+                class="fa-solid fa-plus"></i> Tambah Project</a>
+    </div>
+
+    <div class="overflow-x-auto bg-gray-50 rounded-sm shadow-md mt-3">
         <table class="w-full text-left border-collapse min-w-max ">
             <thead>
                 <tr class="bg-blue-500 uppercase text-white">
@@ -54,16 +60,11 @@
             </tbody>
         </table>
     </div>
-    @if ($showDeleteModal)
-        <div class="fixed inset-0 flex items-center justify-center bg-black/50">
-            <div class="bg-white p-6 rounded-lg">
-                <h2 class="font-bold mb-6">Apakah Anda yakin ingin menghapus project ini?</h2>
-                <div class="mt-4 flex gap-2">
-                    <button wire:click="delete" class="bg-red-500 text-white px-4 py-2 rounded">Ya, Hapus</button>
-                    <button wire:click="$set('showDeleteModal', false)"
-                        class="bg-gray-300 px-4 py-2 rounded">Batal</button>
-                </div>
-            </div>
-        </div>
-    @endif
+
+    <div class="max-w-7xl mx-auto mt-6 flex flex-col items-end text-sm pr-2">
+        <span class="text-gray-500">Created by:</span>
+        <span class="font-bold text-blue-500">Dicky Firdha Firmansyah</span>
+    </div>
+    @include('livewire.modals.delete-project')
+    {{-- @include('livewire.modals.edit-project') --}}
 </div>
