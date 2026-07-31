@@ -2,7 +2,7 @@
 
 Aplikasi Sistem Informasi Project Monitoring yang modern, responsif, dan dinamis. Dibangun menggunakan **Laravel**, **Livewire v4**, dan **Tailwind CSS**. Project ini dikembangkan sebagai pemenuhan tugas teknis (tes rekrutmen).
 
-## ✨ Fitur Unggulan
+## Fitur Unggulan
 
 - **Pencarian Real-time (Live Search):** Menyaring project berdasarkan judul, nama klien, atau nama _project leader_ secara instan tanpa perlu me-_reload_ halaman.
 - **Pagination Dinamis:** Navigasi data yang mulus dengan status _clean URL_ (tanpa parameter halaman di address bar).
@@ -15,13 +15,13 @@ Aplikasi Sistem Informasi Project Monitoring yang modern, responsif, dan dinamis
 - **Dynamic Avatars:** Otomatis menghasilkan foto profil _Project Leader_ secara estetis (berdasarkan inisial nama).
 - **Desain Responsif:** Tampilan antar muka (UI/UX) yang menyesuaikan dengan ukuran layar (Desktop, Tablet, maupun HP).
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 - **Backend:** Laravel 13
 - **Frontend:** Livewire v4, Tailwind CSS, FontAwesome
 - **Database:** MySQL
 
-## 🚀 Panduan Instalasi (Getting Started)
+## Panduan Instalasi (Getting Started)
 
 ### Persyaratan Sistem
 
@@ -34,7 +34,7 @@ Aplikasi Sistem Informasi Project Monitoring yang modern, responsif, dan dinamis
 1. **Clone repositori (atau ekstrak file project)**
 
     ```bash
-    git clone <url-repository-anda>
+    git clone https://github.com/Firdhabungg/Tracking-Project-Management.git
     cd track-project
     ```
 
