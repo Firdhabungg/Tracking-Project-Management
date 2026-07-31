@@ -81,7 +81,7 @@
                         rows="3"class="w-full p-2 border border-gray-300 rounded-md shadow-sm"></textarea>
                 </div>
                 <div class="col-span-2">
-                    <label class="block">Upload Photo / Document</label>
+                    <label class="block">Upload Photo</label>
                     <input wire:model="photo" type="file"
                         class="w-full p-2 border border-gray-300 rounded-md shadow-sm file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-blue-50 file:text-blue-700">
                     @if ($photo)
@@ -95,7 +95,7 @@
             </div>
             <div class="flex justify-end gap-3 pt-4 border-t">
                 <a href="{{ '/' }}"
-                    class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200">Back</a>
+                    class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200">Cancel</a>
                 <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Create
                     Project</button>
             </div>

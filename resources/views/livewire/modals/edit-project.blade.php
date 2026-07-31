@@ -86,8 +86,21 @@
                         </div>
                         <div class="col-span-2">
                             <label class="block">Change Photo (Opsional)</label>
+                            @if ($photo)
+                                <div class="text-sm font-semibold">
+                                    Foto Baru siap di-upload.
+                                </div>
+                            @elseif ($oldPhoto)
+                                <div class="mb-3">
+                                    <p class="text-xs text-gray-500 mb-1">Current photo:</p>
+                                    <img src="{{ asset('storage/' . $oldPhoto) }}" alt="Current Photo"
+                                        class="w-32 h-32 object-contain rounded-md border border-gray-200 shadow-sm">
+                                </div>
+                            @endif
                             <input wire:model="photo" type="file"
                                 class="w-full p-2 border border-gray-300 rounded-md shadow-sm file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-blue-50 file:text-blue-700">
+                            <div class="text-xs text-gray-500 mt-1">Leave blank if you don't want to change the current
+                                photo.</div>
                             @error('photo')
                                 <span class="text-red-600 text-xs">{{ $message }}</span>
                             @enderror
@@ -95,7 +108,7 @@
                     </div>
                     <div class="flex justify-end gap-3 pt-4 border-t">
                         <button type="button" wire:click="$set('showEditProjectModal', false)"
-                            class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">Batal</button>
+                            class="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">Cancel</button>
                         <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
                             Update Project</button>
                     </div>

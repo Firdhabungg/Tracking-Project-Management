@@ -17,6 +17,8 @@ class Dashboard extends Component
 
     public $search = '';
 
+    public $oldPhoto = '';
+
     public $title = '';
     public $user_id = '';
     public $client_id = '';
@@ -66,6 +68,7 @@ class Dashboard extends Component
         $this->progress = $project->progress;
         $this->status = $project->status;
         $this->description = $project->description;
+        $this->oldPhoto = $project->photo;
 
         $this->showEditProjectModal = true;
     }
