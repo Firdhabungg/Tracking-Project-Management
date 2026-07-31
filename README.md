@@ -1,4 +1,4 @@
-# Project Monitoring Dashboard 🚀
+# Project Monitoring Dashboard 
 
 Aplikasi Sistem Informasi Project Monitoring yang modern, responsif, dan dinamis. Dibangun menggunakan **Laravel**, **Livewire v4**, dan **Tailwind CSS**. Project ini dikembangkan sebagai pemenuhan tugas teknis (tes rekrutmen).
 
