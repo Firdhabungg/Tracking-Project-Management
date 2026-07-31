@@ -99,6 +99,9 @@
                             @endif
                             <input wire:model="photo" type="file"
                                 class="w-full p-2 border border-gray-300 rounded-md shadow-sm file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-blue-50 file:text-blue-700">
+                            <div wire:loading wire:target="photo" class="text-sm text-blue-600 mt-2 font-semibold">
+                                <i class="fa-solid fa-spinner fa-spin mr-1"></i> Processing photos...
+                            </div>
                             <div class="text-xs text-gray-500 mt-1">Leave blank if you don't want to change the current
                                 photo.</div>
                             @error('photo')

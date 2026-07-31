@@ -84,8 +84,11 @@
                     <label class="block">Upload Photo</label>
                     <input wire:model="photo" type="file"
                         class="w-full p-2 border border-gray-300 rounded-md shadow-sm file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-blue-50 file:text-blue-700">
+                    <div wire:loading wire:target="photo" class="text-sm text-green-600 mt-2 font-semibold">
+                        <i class="fa-solid fa-spinner fa-spin mr-1"></i> Processing photos...
+                    </div>
                     @if ($photo)
-                        <div class="mt-2 text-sm text-green-600">Choose file: {{ $photo->getClientOriginalName() }}
+                        <div class="mt-2 text-sm text-green-600">{{ $photo->getClientOriginalName() }}
                         </div>
                     @endif
                     @error('photo')
