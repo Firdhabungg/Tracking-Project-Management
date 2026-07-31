@@ -26,7 +26,7 @@ class ProjectCreate extends Component
     {
         $validated =
             $this->validate([
-                'title'         => 'required|string|max:50',
+                'title'         => 'required|string|min:4|max:50',
                 'client_id'     => 'required|exists:clients,id',
                 'user_id'       => 'required|exists:users,id',
                 'start_date'    => 'required|date',

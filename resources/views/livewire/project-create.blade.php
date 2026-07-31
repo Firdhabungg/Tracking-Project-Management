@@ -5,16 +5,17 @@
         <form wire:submit.prevent="save" class="space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="col-span-2">
-                    <label class="block font-medium">Title Project</label>
-                    <input wire:model="title" type="text"
+                    <label for="title" class="block font-medium">Title Project</label>
+                    <input wire:model="title" id="title" type="text"
                         class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
                     @error('title')
                         <span class="text-red-600 text-xs">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
-                    <label for="" class="block font-medium">Client</label>
-                    <select wire:model="client_id" class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                    <label for="client" class="block font-medium">Client</label>
+                    <select wire:model="client_id" id="client"
+                        class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
                         <option value="">Select Client</option>
                         @foreach ($clients as $client)
                             <option value="{{ $client->id }}">{{ $client->company_name }}</option>
@@ -25,8 +26,9 @@
                     @enderror
                 </div>
                 <div>
-                    <label for="" class="block font-medium">Project Leader</label>
-                    <select wire:model="user_id" class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                    <label for="leader" class="block font-medium">Project Leader</label>
+                    <select wire:model="user_id" id="leader"
+                        class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
                         <option value="">Select Leader</option>
                         @foreach ($users as $user)
                             <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -37,32 +39,33 @@
                     @enderror
                 </div>
                 <div>
-                    <label class="block">Start Date</label>
-                    <input wire:model="start_date" type="date"
+                    <label for="start_date" class="block">Start Date</label>
+                    <input wire:model="start_date" id="start_date" type="date"
                         class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
                     @error('start_date')
                         <span class="text-red-600 text-xs">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
-                    <label class="block">End Date</label>
-                    <input wire:model="end_date" type="date"
+                    <label for="end_date" class="block">End Date</label>
+                    <input wire:model="end_date" id="end_date" type="date"
                         class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
                     @error('end_date')
                         <span class="text-red-600 text-xs">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
-                    <label class="block">Progress</label>
-                    <input wire:model="progress" type="number" min="0" max="100"
+                    <label for="progress" class="block">Progress</label>
+                    <input wire:model="progress" id="progress" type="number" min="0" max="100"
                         class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
                     @error('progress')
                         <span class="text-red-600 text-xs">{{ $message }}</span>
                     @enderror
                 </div>
                 <div>
-                    <label class="block font-medium">Status</label>
-                    <select wire:model="status" class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                    <label for="status" class="block font-medium">Status</label>
+                    <select id="status" wire:model="status"
+                        class="w-full p-2 border border-gray-300 rounded-md shadow-sm">
                         <option value="not_started">Not Started</option>
                         <option value="in_progress">In Progress</option>
                         <option value="completed">Completed</option>
@@ -73,8 +76,9 @@
                     @enderror
                 </div>
                 <div class="col-span-2">
-                    <label class="block">Description</label>
-                    <textarea wire:model="description" rows="3"class="w-full p-2 border border-gray-300 rounded-md shadow-sm"></textarea>
+                    <label for="description" class="block">Description</label>
+                    <textarea wire:model="description" id="description"
+                        rows="3"class="w-full p-2 border border-gray-300 rounded-md shadow-sm"></textarea>
                 </div>
                 <div class="col-span-2">
                     <label class="block">Upload Photo / Document</label>

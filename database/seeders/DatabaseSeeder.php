@@ -68,29 +68,29 @@ class DatabaseSeeder extends Seeder
         //     'phone' => '+62 817-8901-2345',
         // ]);
 
-        User::create([
-            'name' => 'Ahmad Hidayat',
-            'email' => 'ahmad.hidayat@gmail.com',
-            'password' => Hash::make('password'),
-            'phone' => '+62 812-3456-7890'
-        ]);
-        User::create([
-            'name' => 'Dewi Lestari',
-            'email' => 'dewi.lestari@gmail.com',
-            'password' => Hash::make('password'),
-            'phone' => '+62 813-9876-5432'
-        ]);
-        User::create([
-            'name' => 'Zahra Helmalia',
-            'email' => 'zahra.helmalia@gmail.com',
-            'password' => Hash::make('password'),
-            'phone' => '+62 896-4856-7765'
-        ]);
-        User::create([
-            'name' => 'Rizky Pratama',
-            'email' => 'rizky.pratama@gmail.com',
-            'password' => Hash::make('password'),
-            'phone' => '+62 811-2233-4455'
-        ]);
+        // User::create([
+        //     'name' => 'Ahmad Hidayat',
+        //     'email' => 'ahmad.hidayat@gmail.com',
+        //     'password' => Hash::make('password'),
+        //     'phone' => '+62 812-3456-7890'
+        // ]);
+        // User::create([
+        //     'name' => 'Dewi Lestari',
+        //     'email' => 'dewi.lestari@gmail.com',
+        //     'password' => Hash::make('password'),
+        //     'phone' => '+62 813-9876-5432'
+        // ]);
+        // User::create([
+        //     'name' => 'Zahra Helmalia',
+        //     'email' => 'zahra.helmalia@gmail.com',
+        //     'password' => Hash::make('password'),
+        //     'phone' => '+62 896-4856-7765'
+        // ]);
+        // User::create([
+        //     'name' => 'Rizky Pratama',
+        //     'email' => 'rizky.pratama@gmail.com',
+        //     'password' => Hash::make('password'),
+        //     'phone' => '+62 811-2233-4455'
+        // ]);
     }
 }
