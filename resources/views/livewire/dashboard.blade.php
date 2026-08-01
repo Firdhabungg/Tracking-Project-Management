@@ -3,7 +3,7 @@
     <div class="flex flex-col md:flex-row justify-between items-center gap-3 mt-4 px-2">
         <a href="{{ '/project/create' }}" wire:navigate
             class="w-full md:w-auto p-2 rounded font-bold bg-blue-500 hover:bg-blue-600 text-white transition-colors"><i
-                class="fa-solid fa-plus mr-1"></i> Tambah Project</a>
+                class="fa-solid fa-plus mr-1"></i> New Project</a>
         <div class="w-full md:w-auto flex items-center relative">
             <i class="fa-solid fa-magnifying-glass absolute left-3"></i>
             <input wire:model.live.debounce.250ms="search" type="text" id="search"
